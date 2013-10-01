@@ -1,0 +1,20 @@
+{
+  "name": "natwest",
+  "version": "0.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": "ssh://git@bitbucket.org/mtharrison/natwest.git",
+  "author": "",
+  "license": "BSD",
+  "dependencies": {
+    "node-phantom-simple": "~1.0.13",
+    "node-phantom": "~0.2.3",
+    "jquery": "~1.8.3",
+    "prompt": "~0.2.11",
+    "colors": "~0.6.2"
+  },
+  "devDependencies": {}
+}
