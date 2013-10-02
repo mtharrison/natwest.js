@@ -26,6 +26,7 @@ Usage
 
 ```sh
 ./natwest.js             # Uses the default CLI table renderer
+                         # OR
 ./natwest.js -r server   # Serves you JSON via an Express server
 ```
 
