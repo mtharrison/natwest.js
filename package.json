@@ -6,15 +6,16 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "repository": "ssh://git@bitbucket.org/mtharrison/natwest.git",
+  "repository": "https://github.com/mtharrison/natwest.js.git",
   "author": "",
   "license": "BSD",
   "dependencies": {
-    "node-phantom-simple": "~1.0.13",
     "node-phantom": "~0.2.3",
     "jquery": "~1.8.3",
     "prompt": "~0.2.11",
-    "colors": "~0.6.2"
+    "colors": "~0.6.2",
+    "phantomjs": "~1.9.2-1",
+    "cli-table": "~0.2.0"
   },
   "devDependencies": {}
 }
