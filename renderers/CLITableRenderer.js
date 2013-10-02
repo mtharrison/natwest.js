@@ -10,13 +10,12 @@ var CLITableRenderer = function() {
 
 CLITableRenderer.prototype = {
 	setData: function(data) {
-		this.data = data;
+		for(var i in data)
+			this.table.push([data[i].id, data[i].name, data[i].number, data[i].sortcode, data[i].balance, data[i].available]);
+
 		return this;
 	},
 	render: function() {
-		for(var i in this.data){
-			this.table.push(this.data[i]);
-		}
 		console.log(this.table.toString());
 	}
 };

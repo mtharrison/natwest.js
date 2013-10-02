@@ -1,9 +1,20 @@
 #!/usr/bin/env node
-
 var credentials = {},
 phantom = require('node-phantom'),
 prompt = require("prompt"),
 fs = require("fs");
+
+var argv = require('optimist').argv;
+
+if(typeof(argv.r) !== 'undefined'){
+    if(argv.r === "server"){
+        var renderer = require("./renderers/ServerRenderer");
+    } else {
+        var renderer = require("./renderers/CLITableRenderer");
+    }
+} else {
+    var renderer = require("./renderers/CLITableRenderer");
+}
 
 // Check if there's a credentials file
 fs.exists('./credentials.json', function (exists) {
@@ -106,19 +117,19 @@ function bank() {
 
                                         var accountsDOM = Array.prototype.slice.call(frames['ctl00_secframe'].document.querySelectorAll("#ctl00_mainContent_Accounts_Accounts .CollapseExpandLink"),0);
                                         for(var i in accountsDOM){
-                                            var account = [];
-                                            account.push(parseInt(i)+1);
-                                            account.push(accountsDOM[i].querySelector(".AccountName").innerText);
-                                            account.push(accountsDOM[i].querySelector(".AccountNumber .num").innerText.replace(/ /g, ""));
-                                            account.push(accountsDOM[i].querySelector(".SortCode .num").innerText.replace(/ /g, ""));
-                                            account.push(accountsDOM[i].querySelectorAll(".currency")[0].innerText.replace(/ /g, ""));
-                                            account.push(accountsDOM[i].querySelectorAll(".currency")[1].innerText.replace(/ /g, ""));
+                                            var account = {};
+                                            account['id'] = parseInt(i)+1;
+                                            account['name'] = accountsDOM[i].querySelector(".AccountName").innerText;
+                                            account['number'] = accountsDOM[i].querySelector(".AccountNumber .num").innerText.replace(/ /g, "");
+                                            account['sortcode'] = accountsDOM[i].querySelector(".SortCode .num").innerText.replace(/ /g, "");
+                                            account['balance'] = accountsDOM[i].querySelectorAll(".currency")[0].innerText.replace(/ /g, "");
+                                            account['available'] = accountsDOM[i].querySelectorAll(".currency")[1].innerText.replace(/ /g, "");
                                             accounts.push(account);
                                         }
 
                                         return accounts;
                                     }, function (error, result) {
-                                        require("./CLITableRenderer").setData(result).render();
+                                        renderer.setData(result).render();
                                         ph.exit();
                                     }, credentials);
 }, 3000);
