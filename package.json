@@ -14,7 +14,6 @@
     "jquery": "~1.8.3",
     "prompt": "~0.2.11",
     "colors": "~0.6.2",
-    "phantomjs": "~1.9.2-1",
     "cli-table": "~0.2.0",
     "optimist": "~0.6.0"
   },

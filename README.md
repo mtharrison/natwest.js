@@ -14,6 +14,12 @@ Natwest.js is a command line tool written in Node.js which lets CLI addicts get 
 Installation
 --------------
 
+First ensure PhantomJS in installed:
+
+`sudo npm install -g phantomjs`
+
+then
+
 ```sh
 git clone https://github.com/mtharrison/natwest.js
 cd natwest.js
