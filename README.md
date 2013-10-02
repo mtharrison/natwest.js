@@ -16,8 +16,6 @@ Installation
 
 PhantomJS is required for this tool to work, Installation instructions are here: http://phantomjs.org/download.html
 
-then
-
 ```sh
 git clone https://github.com/mtharrison/natwest.js
 cd natwest.js
