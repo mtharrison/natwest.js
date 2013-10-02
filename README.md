@@ -1,4 +1,4 @@
-Natwest.js
+Natwest.js 0.1.0
 =========
 
 A command line banking tool written in Node.js
