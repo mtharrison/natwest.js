@@ -47,6 +47,12 @@ Version
 
 0.1.0
 
+Roadmap
+--------------
+
+-0.1.1 Cleaning, refactoring and separation into a public API
+-0.1.2 Addition of error reporting for when things go wrong
+
 License
 ----
 MIT
