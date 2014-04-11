@@ -1,13 +1,13 @@
 {
   "name": "natwest.js",
   "version": "0.0.0",
-  "description": "A command line banking tool for Natwest (UK)",
+  "description": "An unofficial Node library and CLI for Natwest bank",
   "main": "natwest.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha test"
   },
   "repository": "https://github.com/mtharrison/natwest.js.git",
-  "author": "Matt Harrison <mt.harrison86@gmail.com>",
+  "author": "Matt Harrison <hi@matt-harrison.com>",
   "license": "BSD",
   "dependencies": {
     "node-phantom": "~0.2.3",
